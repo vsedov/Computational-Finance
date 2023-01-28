@@ -1,0 +1,402 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{First Week Lecture notes and slides \textit{Important Notes without the bs}}
+\author{vsedov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Functions of the Financial System}
+There are 5 core things that lead to the core functions for the financial system
+
+\begin{itemize}
+	\item Clearing and settling payments: Getting faster and easier all the time. Consider contactless payments.
+	\item Transferrring resources across time and space
+	\item Pooling resources and subdividing shares :think of shares or sums of large return
+	\item managing risk
+	      \begin{itemize}
+		      \item Hedgers: Risk reducers, they do not like having large risks,
+		      \item speculators: They do not really care about the risks so long as the reward is high
+		      \item arbitrageurs look for riskless profit (e.g., through price
+		            differences in different markets)
+	      \end{itemize}
+	\item Providing information, What info does the current state of the situation provides fruitful results.
+\end{itemize}
+
+\begin{definition}[Assets]
+	An Asset is anything that has an economic value - cash bank deposit, bonds, ogld and more
+
+	Main types of financial instruments include
+	\begin{itemize}
+		\item Debt or fixed income, instruments: bonds and mortgages / loans
+		\item equity so like shares and stocks
+		\item derivatives, derive their value from other assets. Which is the main or core topic for the rest of this course.
+	\end{itemize}
+\end{definition}
+
+\subsection{Interest}
+In finance and economics, interest is payment from a borrower or deposit-taking financial institution to a lender or depositor of an amount above repayment of the principal sum, at a particular rate. It is distinct from a fee which the borrower may pay the lender or some third party
+
+\end{definition}
+
+\subsubsection{Types of interest}
+\begin{itemize}
+	\item Simple interest
+	      \begin{math}
+		      (1+r) +r r = 1 + 2r
+	      \end{math}
+	      Simple interest is an interest that is calculated on the principal amount of a loan or deposit. It does not deal with acumulated interst.
+
+	\item Compound interest:
+	      \begin{math}
+		      (1+r)^{2} = 1+2r+r^2
+	      \end{math}
+	      Compound interst is interst that is calculated on the principle amount and also on the accumulated interst of a loan or deposit. Most cause we use the principle, r  and t
+	      to base our formulation, regarding these values.
+\end{itemize}
+
+In both scenarios the r2 here is the interest on interest. Simple interest is never used now a days.
+Regarding compound interest, you get
+\begin{math}
+	£(1 + r)^{T}
+\end{math}
+After T years, the interest is compounded, In theory T is not an integer but a time unit, but that is alright that is practice over time to work on those values.
+
+\subsubsection{Time Value of Money}
+100 pounds is not what it was 1 year ago. You can invest 100 pounds and earn interest. The purchasing power of money May also change and the ability of how structured money is also May change. Which is something to consider in the long run.
+
+The way we evaluate the time of money situation, when we want to see how much our present value should be worse we use the principle of discounting
+\begin{definition}[Discounting]
+	Discounting is the process of determining the present value of a future cash flow or series of cash flows. It is used in finance to compare the value of money at different points in time. The basic idea is that money received in the future is worth less than the same amount of money received today, due to the time value of money. Discounting takes into account the interest rate or discount rate and the length of time until the future cash flow is received. The present value of a future cash flow is calculated by dividing the future cash flow by (1 + discount rate) raised to the power of the number of periods in the future. The resulting number represents the current value of the future cash flow. Discounting is used in various financial applications like discounted cash flow analysis, option pricing, bond valuation, and others \\
+
+
+	\begin{definition}[Future Value]
+		Future value is the value of an asset at a future date, based on an assumed rate of growth. For example, if you deposit \$1000 into a savings account with a 2\% annual interest rate, the future value of that deposit would be \$1040 after one year.\\
+		\begin{math}
+			FV = m \cdot (1+r)^{T}
+		\end{math}
+
+
+	\end{definition}
+
+	\begin{definition}[Present Value]
+		Present value is the current value of a future sum of money, based on an assumed rate of return. For example, if you will receive \$1000 in one year, and the interest rate is 2\%, the present value of that future sum would be \$980 today.\\
+		\begin{math}
+
+			PV = \frac{m}{(1+r)^{T}}
+		\end{math}
+
+	\end{definition}
+\end{definition}
+
+\paragraph{Examples of discounting money}
+
+Consider 100 pounds over five year saving bond is selling at 75 pounds, an alternative is 8 \% bank deposit, is the bond worth buying ? \\
+\\
+\\
+\begin{math}
+
+	% \frac{100}{(1+0.08)^{5}} = 68.06
+	100 / (1 + 0.08)^{5}
+
+\end{math}
+\\
+
+\begin{math}
+
+	-75 + 68.06 = -6.94
+\end{math}
+
+Through discounting we can check the current price at the given time slot right. Such that in this scenario you can deduce that this is not worth purchasing .
+
+\subsection{Annuity}
+\begin{definition}[Annuity]
+
+	A cash flow consisting of regular payments of the same
+	amount is called annuity.
+
+
+\end{definition}
+
+Methods of how to calculate annuity
+\begin{align*}
+	\begin{itemize}
+
+		\item Present Value
+		      $$ PV = \frac{A \cdot \left[ 1 - \left(1 + i \right)^{-n}\right]}{i}$$
+
+		\item Ordinary Annutiy
+
+		      $$ P = \frac{A \cdot i}{1 - (1 + i)^{-n}} \\$$
+		\item Annunity Due
+
+		      $$ P = \frac{A \cdot i}{1 - (1 + i)^{-n}} \cdot \left(1 + i \right)            \\ $$
+		\item Future Value
+
+		      $$ FV = \frac{A \cdot \left[(1 + i)^{n} - 1\right]}{i}$$
+	\end{itemize}
+\end{align*}
+
+
+The annuity formula helps in determining the values for annuity payment and annuity due based on the present value of an annuity due, effective interest rate, and several periods. Hence, the formula is based on an ordinary annuity that is calculated based on the present value of an ordinary annuity, effective interest rate, and several periods.
+
+
+\begin{itemize}
+	\item P is the payment that the annuity provides
+	\item A is the amount of money invested in the annuity
+	\item i is the interest rate
+	\item n is the number of payments that are expected over the life of the annuity, so the amount of time in short.
+\end{itemize}
+
+So For example consider the following question :
+
+\begin{equation}
+	\begin{quote}
+
+		£ 100, 000 loan is repaid by equal annual installments over 10 years, the interest rate is 5\%, what is the yearly instalments required for this ?
+	\end{quote}
+
+
+	$$P = \frac{( A \cdot i )}{(1 -(1 + i)^{-n})}$$
+
+	A = 100,000
+	P = None
+	i = 0.05
+	n = 10 years
+
+	$$ \frac{100, 000 \cdot 0.05}{(1- (1 + 0.05)^{-10})} = 12950.5 $$
+	\label{eq:Annuity Example 1}
+\end{equation}
+
+
+\section{Core Notes / Bonds / Interest and more }
+
+\begin{definition}[Bonds]
+	A bond is a financial instrument that represents a loan made by an investor (the bondholder) to a borrower (the issuer). The issuer is typically a corporation or government entity. In exchange for the loan, the issuer promises to pay the bondholder a fixed rate of interest (coupon) over a specified period of time, and to return the bond's face value (principal) when the bond matures. Bonds are considered to be a type of debt security, and are typically considered to be less risky investments than stocks.
+
+	$$
+	$$ C \cdot FV \cdot \frac{1 - (1 + r) ^{-N}}{r} + \frac{FV}{(1+r)^{N}} $$
+
+	$$
+	\begin{itemize}
+		\item C : Coupon Rate
+		\item FV :  Face Value
+		\item r : Interest Rate
+		\item N : Time remaining
+	\end{itemize}
+
+
+\end{definition}
+
+
+\subsection{YTM}
+\begin{definition}[Yield to maturity]
+	Yield to maturity (YTM) is a measure of the return on a bond if it is held until it matures. It takes into account the current market price, the face value, the coupon rate, and the time until maturity. The higher the YTM, the more attractive the bond is to investors, as they will earn a higher return on their investment. YTM is typically used to compare bonds with different coupon rates and maturities.
+
+\end{definition}
+
+\subsection{Interest types}
+\subsubsection{Discretely Compounded interest}
+
+\begin{definition}[Discretely Compounded interest]
+	Discrete compounding refers to the process of calculating interest on a deposit or loan at set intervals (such as annually or monthly) rather than continuously.
+\end{definition}
+
+\begin{definition}[APR]
+
+	Annual Equivalent Rate (AER) and Annual Percentage Rate (APR) are two ways to express the interest rate on a financial product, such as a savings account or loan. AER expresses the interest rate as an annual rate, taking into account the effect of compounding, while APR expresses the rate as a simple annual percentage. AER is a more accurate representation of the true cost of borrowing or the true interest earned on a savings account, as it accounts for the compounding effect of interest.
+
+\end{definition}
+
+\begin{definition}[AER or EFF]
+
+	Effective Annual Rate (EAR) is similar to AER, but it reflects the real annual interest rate, after taking into account the effect of compounding. EAR is the actual rate of interest earned on an investment or paid on a loan and is a more accurate representation of the true cost of borrowing or the true interest earned than nominal rate which doesn't account for the compounding effect.
+
+
+\end{definition}
+
+
+
+
+\subsubsection{Continuously Compounded Interest}
+\begin{definition}[Continuously Compound Interest]
+
+	Continuous compounding and discrete compounding are two ways to calculate the interest earned on a deposit or loan.
+	Continuous compounding refers to the process of calculating interest on a deposit or loan as an ongoing, continuous process. This means that interest is added to the principal at every instant, rather than at set intervals. The formula for continuously compounded interest is: $A = Pe^{(rt)}$ where P is the principal, r is the interest rate, and t is the time.
+
+\end{definition}
+
+
+\subsubsection{Differences}
+Discrete compounding, on the other hand, refers to the process of calculating interest on a deposit or loan at set intervals (such as annually or monthly) rather than continuously. In discrete compounding, interest is added to the principal at the end of each compounding period. The formula for discrete compounding is: $A = P(1+r)^n$ where P is the principal, r is the interest rate, and n is the number of compounding periods.
+The main difference between continuous and discrete compounding is that continuous compounding results in a higher amount of interest earned over time because it compounds the interest more frequently. This means that if you have the same interest rate and time period, the continuously compounded interest will be higher than the discretely compounded interest.
+In summary, continuous compounding results in a higher amount of interest earned over time than discrete compounding because it compounds the interest more frequently. However, discrete compounding is more practical for most financial products, which typically compound interest at regular intervals.
+
+
+\subsection{Maths behind this}
+
+\begin{itemize}
+	\item Compunding occours when interest is paid not only on account balance but on previously paid sums of interest to, it stacks right.
+	\item This interest on interst can lead to increase to a large returns over a period of time and has been heralded as the mirical or magic of compound interst
+\end{itemize}
+
+
+\subsubsection{Discrete}
+If the interst rate is simple - then FV of all possible interests can be written within the following respect
+$$
+	FV = P(1+ \frac{r}{m})^{m \cdot t}
+$$
+
+\begin{itemize}
+	\item Fv = Future Value
+	\item principal
+	\item (r / m) = Interest rate
+	\item $ m \cdot t $ = Time period
+\end{itemize}
+
+
+Another way to write this is using APR,
+
+$$
+	1 + AER = (1 + \frac{APR}{m})^{m}
+$$
+With this idea, you can calculate the AER, or EFF, if you reverse the formula/ Rewrite the formula.
+
+\subsubsection{Comnpounding}
+Continuously compounded interest is a method of calculating interest on a financial investment where the interest is compounded an infinite number of times per year. The formula for calculating continuously compounded interest is given by:
+
+$$
+	A = P \cdot e^{rt}
+$$
+
+\begin{itemize}
+	\item A = the future value of the investment
+	\item P = the initial principal or investment amount
+	\item r = the annual interest rate (expressed as a decimal)
+	\item t = the number of years the investment is held
+	\item e = Euler's constant, approximately 2.71828
+\end{itemize}
+This formula shows that the future value of an investment increases exponentially as the interest rate and the length of time the investment is held increase. The beauty of this formula is that it simplifies the calculation of interest over long periods of time and eliminates the need to calculate the number of times interest is compounded.
+
+\begin{equation}
+	\begin{quote}
+		For example if an investor invests £ 1000 at an ANNUAL INTEREST rate of 5\% for 5 years.
+	\end{quote}\\
+
+	$$A = 1000 \cdot e^{0.05 \cdot 5} = 1284.03$$
+
+	\label{eq:Compounding}
+\end{equation}
+It is important to note that for very small time periods, the difference between continuously compounded interest and interest compounded at regular intervals (e.g. annually, semi-annually, quarterly, etc.) is negligible. However, as the time period becomes longer, the difference between the two methods becomes more pronounced.
+
+
+
+\section{Core Questions}
+
+\begin{enumerate}
+	\item \begin{equation}
+		      \begin{quote}
+			      A £100,000 loan is repaid by equal annual installments over 10 years. The
+			      effective interest rate is 5\%. What is the yearly payment? Same question
+			      if the continuous compounding rate is 5%.
+		      \end{quote}
+
+		      \label{eq:Question 7}
+	      \end{equation}
+	\item \begin{equation}
+
+		      \begin{quote}
+			      The following investment project has been proposed to the board of direc-
+			      tors of a company. Some new equipment should be bought for £100,000.
+			      The equipment will last for 3 years and bring the company £50,000 of
+			      profit over each year of its lifetime. The risk-free (effective) interest rate
+			      is 10\%. Shall the project be pursued?
+		      \end{quote}
+		      \label{eq:Question 8}
+	      \end{equation}
+
+	\item \begin{equation}
+
+		      \begin{quote}
+
+			      The face value of a bond is £100. It makes 6 annual coupon payments at
+			      the coupon rate of 15\% and matures in 6 years. Calculate the value of the
+			      bond assuming EFF = 5\%. (Answer: approximately £150.76.)
+		      \end{quote}
+		      \label{eq:Question 9}
+	      \end{equation}
+	\item \begin{equation}
+
+		      \begin{quote}
+			      The market price of a zero coupon bond with the face value of £150
+			      maturing in 3 years is £100. Work out the yield of the bond. (Answer:
+			      about 14.5\%.)
+		      \end{quote}
+		      \label{eq:Question 10}
+	      \end{equation}
+
+
+
+
+\end{enumerate}
+
+
+\end{document}
