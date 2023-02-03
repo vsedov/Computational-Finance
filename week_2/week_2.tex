@@ -1,0 +1,469 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Week 2 Lecture Notes}
+\author{Vsedov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Derivatives}
+
+\begin{definition}[Derivatives]
+	Derivatives refer to contracts whose value depends on changes in the value of underlying assets. Such contracts can be standardized or non-standardized
+	Examples of underlying assets are stocks, interest rates, exchange rates, credit spreads,
+\end{definition}
+
+\subsection{Forward Contract}
+A forward contract is an agreement between two parties to exchange some item, in the future. Such that at a prearranged price - meaning that you buy something at a fixed rate.
+\begin{itemize}
+	\item Both parties have an obligation to fulfill
+	\item the parties who agrees to buy takes a long position
+	\item the party who agrees to sell takes a short position
+	\item no money changes hand untiol the delivery date
+	\item Example : \textit{By 100 oz of gold at £400 in December}
+\end{itemize}
+
+\begin{itemize}
+	\item Forward contracts can be used for both hedign and speculation.
+
+	\item Regular contracts: with immediate delivery are called about spot contracts
+\end{itemize}
+
+\section{Forward Price}
+
+\begin{definition}[Forward Price]
+	Forward price is the agreed upon price of a commodity or security for delivery at a specified future date. It is based on the spot price and takes into account the expected price changes, interest rates, and other factors that could affect the price between now and the delivery date.
+\end{definition}
+
+
+\begin{definition}[Spotting]
+	Spot price refers to the current market price for a commodity or security. It is the price at which a buyer and seller agree to trade the asset right now.
+\end{definition}
+
+In newspaper quoptes you find forward price and spot price, the spot price is the price at the spot market.
+the forward price - is the face value of the forward contracts entererd in  arow.
+The forward price converges to the spot price as matuirty approaches
+
+The forward price, should converge, to the spot price, as we approach maturity.
+Consider the following
+
+\begin{itemize}
+
+	\item F be the forward price
+	\item T be the time to maturity
+	\item S be the spot price
+	\item r be the continioous interest rate
+\end{itemize}
+
+
+Formulation \\
+
+\begin{itemize}
+	\item Let $ F > Se^{rT} $ Spot price, compounded on the core spot value. $rT$ here is a positive number, which is greater that one, which will allow us to get the future value of S.
+	\item Equation
+	      \begin{itemize}
+		      \item Enter into the forward contract to sell an asset for \$F - So you are taking a short posssition
+		      \item then you go ahead and borrow \$S at interest rate $r$
+		      \item then you go on the spot market, and you buy the asset, and you keep it.
+
+	      \end{itemize}
+	\item Wait till T, till that gets matured.
+	      \begin{itemize}
+		      \item Deliver the asset and get \$F
+		      \item Pay up the debt of $Se^{rT}$
+	      \end{itemize}
+
+	\item Pocket out the difference
+	      Assuming that $F > Se^{rT}$, you would just keep the difference between F and Se, to get your profit value.
+	      In this scenario, you have zero risk to worry about.
+\end{itemize}
+This is an Example of arbitrage stratergy.
+\\
+This stratergy is very robus, and does not depend on future spot price of the asset.Such that in the future at time T, the asset price May be what ever, as it does not enter the calculation. The calculation is based on what you know now .
+Forward price, spot price and interest rate. Hencing making this a complete and safe strat.
+
+
+No consider the oppposite
+You will be short selling here, when you spot on the market, and people will be willing to buy from you.
+\begin{itemize}
+	\item $ F < Se^{rT} $
+	\item You Enter a forward position to buy the item in the future for \$ F price
+	\item You borrow the asset
+	      \begin{itemize}
+		      \item Sell the asset at the spot market for \$ S
+		      \item invest \$ S at interest rate r
+
+	      \end{itemize}
+	\item At time T, you will get
+	      \begin{itemize}
+		      \item get $Se^{rT}$ Bank will pay this
+		      \item pay F and get the assets using this money you will fufil the obligation .
+		      \item return the asset
+	      \end{itemize}
+	\item I pocket the difference between Se - F, rather than F- Se. Which is the one above.
+\end{itemize}
+Conclusion: The price of $F = Se^{rT}$ is enforced by Arbritage.
+
+\subsubsection{Examples Assumptions}
+\begin{itemize}
+	\item Assumption: Buying an item and keeping it, so your not accounting storage cost and over overheads, which can ruin profits in the long run.
+	\item Other examples include the following
+	      \begin{itemize}
+		      \item The spot price of oil is 19
+		      \item the quoted 1 year forward price of oil is 25
+		      \item the 1 year interest is 5 percent per annum
+		      \item the storage cost of oil are 2 \% per annum as well
+		      \item is there an arbritage opportunity ?
+	      \end{itemize}
+\end{itemize}
+using the given formula, you want to check what the price, would evaluate to,. So you would have to run both formulas, to see if it would eval correctly.
+
+In this instance you would have:
+
+\begin{math}
+	25 > 19.05
+\end{math}
+\subsection{Profolio}
+consider a portfolio consisting of the following
+\begin{itemize}
+	\item Short position in a forward contract worth 0
+	\item asset worth S
+	\item debt of -S, you borrow S to get the assets
+	\item portfolio cost nothing to set up and is worth 0
+	\item At time T
+	      \begin{itemize}
+		      \item the short forward position is worth F - $S_t$
+		      \item the asset is worth S under t
+		      \item the debt has grown into the following $Se^{eT}$
+	      \end{itemize}
+	\item Portfolio is worth $F - Se^{rT}$
+	      The spot price S t cancels out, and hence there is no uncertaintly involved.
+\end{itemize}
+
+
+\subsection{More information}
+It does not cost much to enter a forward contract. - as we do not eval the forward cost price.
+As the spot prices changes and time passes, the forward price will also change through time as wll.
+The old forward contracts - the face value of X of an old forward contract does not change while the underlying asset price S May change and time left to maturity of T May decrease, or would decrease to 0 .
+Such that in that instance the formula $X = Se^{rt}$ is true but then gets violated later down the line.
+Old forward contracts now have value, positive or negative values. A contract, involves an obligation to continue with it, even if the outcome is negative.
+
+
+\subsection{Value of a Forward Contract}
+\begin{itemize}
+	\item Lets us find F th eprice of the long forward contract. Such that this is the contract that you want to buy, with the delivery price X and the time to maturity X
+	\item Let S be the current price of the underlying asset.
+	\item We then compare it with fresh long ofrward contract with the delivery price  $$ F = Se^{rT} $$ and  time T left to maturity.
+	\item We know that the value of the fresh contract is 0
+	      \item, the difference is that we have to pay X -F extra or in other terms, get F - X at the time of maturity
+	      \begin{itemize}
+		      \item $$ Pv = (F - X)e^{-rT} $$
+		      \item thuse the contract becomes  $$ Pv = (F - X)e^{-rT} = S - Xe^{-rT} $$
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Future prices}
+The future price for a particular maturity, is the delivery price of future contracts that are entered now.
+
+It can be shown in theory that future prices should be the same price as the forward price.
+
+The assumption that is the interest rate is constant becomes essential here.
+issues like taxes or transactions costs creep in
+therefore in practice deviations May occour.
+
+
+\section{Options}
+\begin{definition}[Options]
+	An option is a contract that gives its woner the right to buy or sell some asset at a pre specified price
+	\begin{itemize}
+		\item An option to buy is called \textit{Call}
+		\item An option to sell is called \textit{Put}
+		\item the price written into the contract is called an \textit{exercise} or \textit{strike} price
+	\end{itemize}
+
+	American options can be exercised at any time up to the expiration data
+	compared to EU based options that can only be exercised on the eexpiration date. So its more tied.
+
+	Quick note is that option contracts have value an cost money to enter into, meaning there is an IV cost that you would have to worry about.
+
+\end{definition}
+
+\subsection{Parties to the contract}
+An option is a contract that gives the buyer the right, but not the obligation, to buy or sell an underlying asset at a specific price on or before a specified date.
+
+The party who buys the option is said to have taken the long position, which means they have the right to buy or selll the asset that they got but they are not obliged by that factor either.
+The party who sells the otion, also known as the person that is writing the option. is Said to have taken the short position, and has the obligation to sell or buy the assets at the agreed price, if the buyer of the option decides to exercise their right, the writer of the option receives a cash payment up fron nt and May face future liabilites, while the buyer of the option only has the right and no obligation the profit or loss of the writer is the reverse of the profit or loss of the buyer of the option.
+
+\subsubsection{Example}
+\paragraph{Example 1}
+Suppose ABC stock is currently trading at \$100 and John is bullish on the stock. He believes that the price of the stock will increase in the near future. John buys a call option on ABC stock with a strike price of \$105 and expiration date in 3 months. The premium he pays for the option is \$2.
+
+In this scenario, John is the buyer of the option and has taken a long position. He has the right, but not the obligation, to buy ABC stock at \$105 within the next 3 months.
+
+On the other hand, the seller of the option, who is also known as the writer, has taken the short position. They are obligated to sell John the ABC stock at \$105 if he decides to exercise his option. The writer receives the \$2 premium from John up front and may face a potential liability if the price of ABC stock rises above \$105 in the next 3 months.
+
+If the price of ABC stock increases to \$110 within the next 3 months, John decides to exercise his option and buys the stock at \$105. In this case, John will make a profit of \$5 (the difference between the strike price and the market price of the stock) minus the \$2 premium he paid for the option. The writer of the option, on the other hand, will suffer a loss equal to the reverse of John's profit.
+
+
+\paragraph{Example 2}
+Intrinsic value refers to the amount by which an option is in the money. An in-the-money option has a positive intrinsic value, which is calculated as the difference between the current price of the underlying asset and the strike price of the option. For example, if an IBM share is worth \$120 and the strike price of a 115 call option is \$115, the intrinsic value of the call option is \$120 - \$115 = \$5.
+Time value, on the other hand, is the value of an option that is in addition to its intrinsic value. It reflects the uncertainty of the underlying asset's future price and the time remaining until the option's expiration date. The time value of an option is equal to the total value of the option minus its intrinsic value. For example, if the 115 call option costs \$8, then its time value is \$8 - \$5 = \$3.
+
+
+Options can be in the money, out of the money, or at the money. An in-the-money option has a positive intrinsic value. An out-of-the-money option has no intrinsic value. An at-the-money option has a strike price that is very close to the current underlying asset price.
+
+
+\newpage
+\subsection{Differences between forward contract and Options}
+
+Options and forward contracts are both financial derivatives that allow parties to buy or sell an underlying asset at a specified price in the future. However, there are some key differences between the two.
+
+
+\begin{itemize}
+	\item Nature of the Contract: An option is a contract that gives the buyer the right, but not the obligation, to buy or sell an underlying asset at a specified price. A forward contract, on the other hand, is a contract that requires both parties to buy or sell an underlying asset at a specified price in the future.
+	\item Flexibility: Options provide greater flexibility compared to forward contracts. The buyer of an option has the right, but not the obligation, to exercise the option, while the seller of the option is obligated to sell or buy the underlying asset if the buyer decides to exercise their option. In a forward contract, both parties are obligated to buy or sell the underlying asset at the agreed price.
+	\item Price: The price of an option, known as the premium, is usually higher than the price of a forward contract because of the greater flexibility that options provide.
+	\item Counterparty Risk: Forward contracts are subject to counterparty risk, which means that if one party defaults on the contract, the other party is at risk of losing money. Options, on the other hand, are typically traded on regulated exchanges, and the counterparty risk is reduced because the exchange acts as a middleman and guarantees the trade.
+	\item Customization: Forward contracts can be customized to meet the specific needs of both parties. Options, on the other hand, are typically standardized contracts traded on exchanges.
+\end{itemize}
+In conclusion, options and forward contracts are similar in that they both allow parties to buy or sell an underlying asset at a specified price in the future. However, options offer greater flexibility and are more regulated, while forward contracts can be customized to meet the specific needs of both parties.
+
+\subsection{Leverage}
+Leverage refers to the use of borrowed funds to increase the potential return on an investment. In finance, leverage is the process of using borrowed money or financial instruments to increase the size of an investment and amplify the potential returns.
+
+In the context of the example given, leverage is used to bet on the price increase of IBM shares. Instead of buying the actual shares, the person buys a call option with a strike price of 205p. The call option gives the buyer the right, but not the obligation, to buy the underlying asset (IBM shares) at a specified price (205p) in the future.
+
+Since the call option costs only 2p, the person is able to increase the potential return on their investment by leveraging their capital. If the price of the IBM shares increases to 210p, the value of the call option will increase to 5p, providing a 150% return on the 2p investment.
+
+However, leverage also increases the risk of an investment, as the potential for losses is amplified. If the price of the IBM shares does not increase as expected and stays at or below 205p, the value of the call option will be worth nothing, resulting in a complete loss of the 2p investment.
+In summary, leverage allows investors to increase the potential return on their investment, but also increases the risk. It is important to understand the risks involved with leveraging and to use it wisely.
+
+\subsection{Importance of action}
+notation includes
+\begin{itemize}
+	\item c : Eu Call option price
+	\item p Eu put option price
+	\item C american call option price
+	\item P american put option price
+	\item $$S_0$$ Stock price of today
+	\item $$S_t$$ Stock price at time T
+	\item T : Life of option, time left to mature - or the moment whenn option matures
+	\item t current time, normally we refer to this as t
+\end{itemize}
+
+
+\begin{definition}[σ]
+	volatility of stock price (a parameter showing how
+	volatile the stock price is; will be discussed later in more
+	detail
+\end{definition}
+
+\begin{definition}[D]
+	D: present value (PV) of dividends during option’s life (we
+	usually ignore dividends in this course and let D = 0)
+\end{definition}
+
+\begin{definition}[r]
+	r: risk-free rate for maturity T; we will normally use the
+	continuous compounding rate so that PV (at time 0) of
+	amount A paid at time T is $Ae^{-rT}$
+
+\end{definition}
+
+Consider the following
+
+What would occur when the Stock price of today has a call on eu option price, but not a put, and a call on American price
+Where X, the item, has an option
+T is unkonw, and the volatility is high, then id assume the parameters would evaluate it it being a forward option market.
+
+\subsubsection{Simple Inequality}
+American vs Eu Options
+
+\begin{itemize}
+	\item An american option is worth at least as much as the corresponding EU Option
+	      \begin{math}
+		      C \ge c
+		      \\
+		      P \ge p
+	      \end{math}
+
+\end{itemize}
+
+Suppose that you have the following stats
+\begin{itemize}
+	\item c = 3 ,
+	\item $S_0$ = 20
+	\item X = 18
+	\item T = 1
+	\item r = 10 \%
+	\item D  = 0
+\end{itemize}
+Look at this and consider, would this be an arbitrage opperunity ?
+Such that here you but the call, and short the stock.
+
+\begin{itemize}
+	\item Buy the call short the stock
+	\item proceeds to $$ -3 + 20  = 17 \implies 17 \cdot e^{0.1} = 18.89 > 18$$
+	\item Yes there in an arbitrage opperunity.
+\end{itemize}
+
+\subsubsection{Upper and lower bounds}
+If there are no dividends
+
+$$
+	c \ge S_0 - Xe^{-rT}
+$$
+
+A formal argument, consider portfolios -
+\begin{itemize}
+	\item One eu call option Plus $Xe^{-rT}$ in cash
+	\item one share
+\end{itemize}
+A is worth more than B at Time $T$ implies A is worth more than B at time 0.
+
+On matuirty, you can convert A into B - You will have X on your hands and you can always call an otion and pay X and get the shares. You can convert A into B, But yu do not have to do it.
+Such that they should be worth the same, on matuirty, and hence would imply that A should always evaluate B, at the same time.
+
+
+another example, Stat Here for Arbitrage opperunity :
+\begin{itemize}
+	\item p = 1
+	\item $ S_0 $ = 37
+	\item X  = 40
+	\item T = 0.5
+	\item r = 5\%
+	\item D = 0
+\end{itemize}
+$$  38^{0.05 \cdot 0.5} = 38.96 < 40 $$
+Hence there will be an arbitrage opportunity.
+
+\subsubsubsection{Lower bounds for Eu Prices}
+If there are no dividends then your formulation would be
+$$ p \ge Xe^{-rT} - S_0 $$
+
+While A is worth more at time T we can say that A will be more at time 0, when evaluating the current values
+
+\subsubsection{Put Call parity}
+Assuming there are no dividends consider the following 2 values
+\begin{itemize}
+	\item A Eu call on a stock + OPV of the stike price in cash
+	\item Porfolio B is an EU put on the stock + the stock it self
+\end{itemize}
+
+Both $Max(S_T, X) at the matuirty of the options.
+	This must therefore be worth the same as today
+	$$ c + Xe^{-rT} = p + S_0 $$
+	The previous two inequalities follow this formula.
+
+	\subsubsubsection{Link with forwards}
+	The put call parity implies
+	$$ c - p = S_0 - Xe^{-rT} $$
+	Such that if you have a long position with a forward contract and that you are biying , and the price written on the forward contract written X, then the value of those position will be given above.
+	Consider what $ c - p $ It means you have a portfolio, and means you have a call option, and written a put option, such that you can access the information later down the line, such that the call is option and then you have the put option available that you have signed and confirmed.
+
+a combination of a long position in a call and short position in a put, with same strike prices and matuities.
+
+This is the same to a long position in a forward with the same strick.
+
+If the stock price exceed the strike on matuirty. you take the right to call and buy the share fore X.
+
+I fthe stock price is below the strike on maturity the holder can excerise their right.
+
+\subsubsection{Exercise of calls}
+In theory any american option can be exercised early.
+However an aprican call should not be exercised early.
+
+Why should you not do it
+\\
+$$
+	C \ge c \ge S_0 - Xe^{-rT}
+
+
+	S_0 - X < S_0 - Xe^{-rT}
+$$
+
+
+\subsubsection{Differences betweenthis put and call}
+
+\begin{itemize}
+	\item Call Option:
+	      A call option is a contract that gives the holder the right, but not the obligation, to buy the underlying asset (in this case, the stock) at a predetermined strike price. For example, if the strike price of a call option on this stock is \$110, the holder of the option has the right to buy the stock at a price of \$110, regardless of the current market price.
+
+	      In this case, if the stock price increases above \$110, the holder of the call option can exercise the option and buy the stock at a price of \$110, thereby making a profit.
+
+	\item Put Option:
+	      A put option is a contract that gives the holder the right, but not the obligation, to sell the underlying asset at a predetermined strike price. For example, if the strike price of a put option on this stock is \$90, the holder of the option has the right to sell the stock at a price of \$90, regardless of the current market price.
+
+	      In this case, if the stock price decreases below \$90, the holder of the put option can exercise the option and sell the stock at a price of \$90, thereby making a profit.
+\end{itemize}
+
+
+\section{Things that did not make sense}
+Or that i do not think were properly explained
+\begin{itemize}
+	\item Contract types
+	\item Leverage
+\end{itemize}
+
+
+
+
+\end{document}
