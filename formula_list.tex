@@ -1,0 +1,590 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsthm}
+\usepackage{empheq}
+\usepackage{mdframed}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Other Settings
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{a4paper}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{ocre}{RGB}{243,102,25}
+\definecolor{mygray}{RGB}{243,243,244}
+\definecolor{deepGreen}{RGB}{26,111,0}
+\definecolor{shallowGreen}{RGB}{235,255,255}
+\definecolor{deepBlue}{RGB}{61,124,222}
+\definecolor{shallowBlue}{RGB}{235,249,255}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheoremstyle{mytheoremstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\newtheoremstyle{myproblemstyle}{3pt}{3pt}{\normalfont}{0cm}{\rmfamily\bfseries}{}{1em}{{\color{black}\thmname{#1}~\thmnumber{#2}}\thmnote{\,--\,#3}}
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowGreen,linecolor=deepGreen,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{theorem}{Theorem}[section]
+\theoremstyle{mytheoremstyle}
+\newmdtheoremenv[linewidth=1pt,backgroundcolor=shallowBlue,linecolor=deepBlue,leftmargin=0pt,innerleftmargin=20pt,innerrightmargin=20pt,]{definition}{Definition}[section]
+\theoremstyle{myproblemstyle}
+\newmdtheoremenv[linecolor=black,leftmargin=0pt,innerleftmargin=10pt,innerrightmargin=10pt,]{problem}{Problem}[section]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plotting Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{width=8cm,compat=1.9}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Personal Formula Sheet}
+\author{Vsedov}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+\section{Basic Interest}
+
+\subsection{Simple Interest}
+Simple interest is a type of interest that is calculated based only on the principal amount borrowed or invested, without taking into account any interest earned over time. The formula for calculating simple interest is:
+
+\begin{equation}
+I_{simple} = P \cdot r \cdot t
+\end{equation}
+
+where $I_{simple}$ is the simple interest earned, $P$ is the principal amount borrowed or invested, $r$ is the interest rate (expressed as a decimal), and $t$ is the time period for which the interest is calculated (usually expressed in years).
+
+\subsection{Compound Interest}
+Compound interest is a type of interest that is calculated on both the principal amount and any interest earned over time. The formula for calculating compound interest is:
+
+\begin{equation}
+A = P \left( 1 + \frac{r}{n} \right) ^{nt}
+\end{equation}
+
+where $A$ is the final amount (including principal and interest), $P$ is the principal amount invested or borrowed, $r$ is the annual interest rate (expressed as a decimal), $n$ is the number of times the interest is compounded per year, and $t$ is the time period (usually expressed in years).
+
+\subsection{Continuous Compounding}
+Continuous compounding is a type of interest calculation where interest is continuously added to the principal amount over time. The formula for calculating continuous compounding is:
+
+\begin{equation}
+A = Pe^{rt}
+\end{equation}
+
+where $A$ is the final amount (including principal and interest), $P$ is the initial principal amount invested or borrowed, $r$ is the annual interest rate (expressed as a decimal), and $t$ is the time period (usually expressed in years).
+
+\subsection{Continuous Compounding with Payments}
+Continuous compounding with payments is a type of interest calculation where interest is continuously added to the principal amount over time, but periodic payments are made to reduce the amount owed. The formula for calculating continuous compounding with payments is:
+
+\begin{equation}
+A = P e^{rt} - \frac{C}{r} \left( e^{rt} - 1 \right)
+\end{equation}
+
+where $A$ is the final amount (including principal and interest), $P$ is the initial principal amount invested or borrowed, $r$ is the annual interest rate (expressed as a decimal), $t$ is the time period (usually expressed in years), and $C$ is the periodic payment.
+
+\subsection{PV FV Formula}
+The present value (PV) and future value (FV) formula calculates the value of an investment at a future time period, given an initial investment and an expected interest rate. The formula is:
+
+\begin{equation}
+FV = PV \left( 1 + r \right) ^t
+\end{equation}
+
+where $FV$ is the future value of the investment, $PV$ is the present value of the investment, $r$ is the annual interest rate (expressed as a decimal), and $t$ is the time period (usually expressed in years).
+
+
+\section{Bonds}
+
+\subsection{Annuity Formula}
+The annuity formula calculates the present value of a stream of equal payments received or paid at fixed intervals, such as the coupon payments on a bond. The formula is:
+
+\begin{equation}
+PV = \frac{C}{r} \left( 1 - \frac{1}{(1+r)^n} \right)
+\end{equation}
+
+where $PV$ is the present value of the annuity, $C$ is the periodic payment, $r$ is the interest rate per period, and $n$ is the total number of periods.
+
+\subsection{Zero Coupon Bonds}
+Zero coupon bonds are bonds that do not pay periodic coupon payments, but are sold at a discount to their face value. The investor earns a return by holding the bond until maturity, when the bond will be redeemed for its full face value. The present value of a zero coupon bond is calculated using the formula:
+
+\begin{equation}
+PV = \frac{F}{(1+r)^n}
+\end{equation}
+
+where $PV$ is the present value of the bond, $F$ is the face value of the bond, $r$ is the interest rate per period, and $n$ is the total number of periods.
+
+\subsection{Coupon Bonds}
+Coupon bonds are bonds that pay periodic coupon payments to the investor, in addition to the final face value payment at maturity. The present value of a coupon bond can be calculated as the sum of the present value of the coupon payments and the present value of the face value payment at maturity. The formula is:
+
+\begin{equation}
+PV = \frac{C}{r} \left( 1 - \frac{1}{(1+r)^n} \right) + \frac{F}{(1+r)^n}
+\end{equation}
+
+where $PV$ is the present value of the bond, $C$ is the periodic coupon payment, $r$ is the interest rate per period, $n$ is the total number of periods, and $F$ is the face value of the bond.
+
+\subsection{Yield to Maturity}
+The yield to maturity (YTM) is the total return anticipated on a bond if held until maturity. It is the interest rate that makes the present value of the bond's future cash flows equal to its current market price. The formula for calculating YTM is complex and may require numerical methods to solve, but can be approximated using:
+
+\begin{equation}
+YTM = \frac{C + \frac{F-P}{n}}{\frac{F+P}{2}}
+\end{equation}
+
+where $YTM$ is the yield to maturity, $C$ is the periodic coupon payment, $F$ is the face value of the bond, $P$ is the current market price of the bond, and $n$ is the total number of periods until maturity.
+
+\subsection{Discrete Compounded Interest}
+Discrete compounded interest is the interest earned on a bond that is compounded at regular, discrete intervals, such as annually, semi-annually, or quarterly. The formula for calculating the future value of a bond with discrete compounded interest is:
+
+\begin{equation}
+FV = P \left( 1 + \frac{r}{m} \right)^{nt}
+\end{equation}
+
+where $FV$ is the future value of the bond, $P$ is the present value of the bond, $r$ is the annual interest rate, $m$ is the number of compounding periods per year,
+
+and $t$ is the total number of years until maturity.
+
+The formula for calculating the present value of a bond with discrete compounded interest is:
+
+\begin{equation}
+PV = \frac{C}{r/m} \left( 1 - \frac{1}{(1 + r/m)^{nt}} \right) + \frac{F}{(1 + r/m)^{nt}}
+\end{equation}
+
+where $PV$ is the present value of the bond, $C$ is the periodic coupon payment, $r$ is the annual interest rate, $m$ is the number of compounding periods per year, $t$ is the total number of years until maturity, and $F$ is the face value of the bond.
+
+\subsection{Continuous Compounded Interest}
+Continuous compounded interest is the interest earned on a bond that is compounded continuously over time. The formula for calculating the future value of a bond with continuous compounded interest is:
+
+\begin{equation}
+FV = Pe^{rt}
+\end{equation}
+
+where $FV$ is the future value of the bond, $P$ is the present value of the bond, $r$ is the annual interest rate, and $t$ is the total number of years until maturity.
+
+The formula for calculating the present value of a bond with continuous compounded interest is:
+
+\begin{equation}
+PV = \frac{C}{r} \left( 1 - e^{-rt} \right) + Fe^{-rt}
+\end{equation}
+
+where $PV$ is the present value of the bond, $C$ is the periodic coupon payment, $r$ is the annual interest rate, $t$ is the total number of years until maturity, and $F$ is the face value of the bond.
+
+
+
+\section{Binomial}
+
+\subsection{About Portfolios and How It Links}
+Binomial trees are often used in finance to model the behavior of stock prices and other financial assets over time. By constructing a binomial tree, investors can estimate the probabilities of different future stock price scenarios and adjust their investment portfolios accordingly. This can help investors make more informed decisions about buying, selling, or holding specific financial assets.
+
+\subsection{Notations and Definitions}
+In a binomial tree model, the following notations and definitions are commonly used:
+
+\begin{itemize}
+\item $\mu$ - the expected return of the stock
+\item $\sigma$ - the volatility of the stock
+\item $\pi_u$ - the probability of an up move in the stock price
+\item $\pi_d$ - the probability of a down move in the stock price
+\item $u$ - the up factor
+\item $d$ - the down factor
+\item $S_0$ - the initial stock price
+\item $F_0$ - the calculated forward price of the stock
+\item $r$ - the risk-free interest rate
+\end{itemize}
+
+To calculate the up and down factors, we use the following formulas:
+
+\begin{equation}
+u = e^{\sigma\sqrt{\Delta t}}
+\end{equation}
+
+\begin{equation}
+d = e^{-\sigma\sqrt{\Delta t}}
+\end{equation}
+
+where $\Delta t$ is the length of the time interval.
+
+The forward price $F_0$ of the stock is calculated using the formula:
+
+\begin{equation}
+F_0 = S_0e^{rT}
+\end{equation}
+
+where $T$ is the time to expiration.
+
+\subsection{Advanced Trees}
+In advanced binomial trees, an n-step binary tree branches n times. If the total time is $T$, then each of the n time intervals lasts for $\Delta t = T/n$. Recombinant trees are used, meaning that neighbouring branches converge. This is computationally convenient, as a recombinant n-step tree has n+1 leaves, while a regular tree has 2n leaves. S can be eliminated from the equation for risk-neutral probabilities using the formula:
+
+\begin{equation}
+e^{-r\Delta t} (\pi_u u + \pi_d d) = 1
+\end{equation}
+
+If $u$ and $d$ are the same, then the risk-neutral probabilities stay the same throughout the tree.
+
+\subsubsection{Backward Induction}
+Backward induction is a commonly used method for solving binomial tree problems. Starting from the last time step, we calculate the option value at each node by taking the discounted expected value of the option at the next time step. This is repeated until we reach the initial time step. The formula for backward induction is:
+
+\begin{equation}
+V_t = e^{-r\Delta t} (\pi_u V_{t+1,u} + \pi_d V_{t+1,d})
+\end{equation}
+
+where $V_t$ is the option value at time $t$, $\Delta t$ is the time interval, $\pi_u$ and $\pi_d$ are the risk-neutral probabilities of an up move and a down move, and $V_{t+1,u}$ and $V_{t+1,d}$ are the option values at the next time step.
+
+
+
+
+
+\section{Probability}
+
+\subsection{Normal Distribution}
+The normal distribution, also known as the Gaussian distribution, is a probability distribution that is commonly used to model natural phenomena, such as heights or weights of individuals in a population. The normal distribution is characterized by its mean, $\mu$, and its standard deviation, $\sigma$. The probability density function of the normal distribution is:
+
+\begin{equation}
+f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{equation}
+
+where $x$ is the random variable, $\mu$ is the mean of the distribution, and $\sigma$ is the standard deviation of the distribution.
+
+\subsection{Z score}
+The z-score is a standardized score that measures the distance between a data point and the mean of a normal distribution in terms of standard deviations. The formula for calculating the z-score of a data point, $x$, in a normal distribution with mean, $\mu$, and standard deviation, $\sigma$, is:
+
+\begin{equation}
+z = \frac{x-\mu}{\sigma}
+\end{equation}
+
+A positive z-score indicates that the data point is above the mean, while a negative z-score indicates that the data point is below the mean.
+
+\subsection{Variance and Mean Score}
+The variance and mean score are two important measures of central tendency and dispersion in a normal distribution. The mean score, denoted by $\mu$, is the average value of the distribution, while the variance, denoted by $\sigma^2$, measures the spread of the distribution. The formula for calculating the mean score of a normal distribution is:
+
+\begin{equation}
+\mu = \int_{-\infty}^{\infty} xf(x) dx
+\end{equation}
+
+where $f(x)$ is the probability density function of the normal distribution.
+
+The formula for calculating the variance of a normal distribution is:
+
+\begin{equation}
+\sigma^2 = \int_{-\infty}^{\infty} (x-\mu)^2 f(x) dx
+\end{equation}
+
+The standard deviation, $\sigma$, is simply the square root of the variance, $\sigma^2$.
+
+
+
+\section{Wiener Process}
+
+\subsection{Notation}
+The Wiener process is denoted by $W(t)$ and is a continuous-time stochastic process with the following properties:
+\begin{itemize}
+\item $W(0) = 0$
+\item The increments $W(t) - W(s)$ are normally distributed with mean 0 and variance $t-s$, i.e. $W(t)-W(s) \sim N(0,t-s)$
+\end{itemize}
+
+In addition, the notation $a(x,t)$ is often used to represent the drift term and $b(x,t)$ is used to represent the diffusion term in the stochastic differential equation (SDE) that governs the evolution of the Wiener process.
+
+\subsection{Core Formula}
+The core formula for the Wiener process is given by the following SDE:
+
+\begin{equation}
+dW(t) = a(W(t),t)dt + b(W(t),t)dZ(t)
+\end{equation}
+
+where $dZ(t)$ is a Wiener increment with $dZ(t) \sim N(0, dt)$.
+
+The SDE describes the continuous-time evolution of the Wiener process $W(t)$, with the drift term $a(W(t),t)$ and the diffusion term $b(W(t),t)$ governing the mean and variance of the process, respectively.
+
+\subsection{Central Limit Theory}
+The Wiener process is often used to model the random motion of particles, such as the motion of gas molecules in a container. When the number of particles is very large, the motion of the particles can be described by the central limit theorem, which states that the sum of many independent and identically distributed random variables tends toward a normal distribution. In the limit of an infinite number of particles, the Wiener process becomes a motion governed by a normal distribution.
+
+\subsection{Core Properties}
+The Wiener process has several key properties, including:
+\begin{itemize}
+\item The increments $W(t) - W(s)$ are independent of the past history of the process, i.e. the process has no memory.
+\item The process is continuous but nowhere differentiable, meaning that its paths are almost surely continuous but have infinite variations.
+\item The process is stationary, meaning that its statistical properties are constant over time.
+\item The process has Gaussian increments, meaning that the increments are normally distributed with mean 0 and variance $t-s$.
+\end{itemize}
+
+\subsection{Generalized Wiener Process}
+The generalized Wiener process is a stochastic process that is related to the Wiener process and is given by the SDE:
+
+\begin{equation}
+dX(t) = \mu(X(t),t)dt + \sigma(X(t),t)dW(t)
+\end{equation}
+
+where $\mu(X(t),t)$ and $\sigma(X(t),t)$ are functions that govern the drift and diffusion of the process, respectively. The generalized Wiener process is related to the normal distribution through the following property: if $X(t)$ is a solution to the generalized Wiener process, then the random variable $X(t)$ at time $t$ is normally distributed with mean $X(0)$ and variance $t$.
+
+
+\section{Equation for Stock Process}
+
+\subsection{Notation}
+In the equation for the stock process, the volatility of the stock is denoted by $\sigma$, and the expected return, or drift, is denoted by $\mu$.
+
+\subsection{Core Formula}
+The equation for the stock process is given by the following stochastic differential equation (SDE):
+
+\begin{equation}
+dS(t) = \mu S(t) dt + \sigma S(t) dW(t)
+\end{equation}
+
+where $S(t)$ is the stock price at time $t$, $\mu$ is the expected return or drift, $\sigma$ is the volatility, $W(t)$ is a Wiener process, and $dW(t)$ is a Wiener increment with $dW(t) \sim N(0, dt)$. This equation describes the continuous-time evolution of the stock price.
+
+\section{Ito's Lemma}
+
+\subsection{Notation}
+In Ito's lemma, the notation $a(x,t)$ is often used to represent the drift term and $b(x,t)$ is used to represent the diffusion term in the SDE that governs the evolution of the process.
+
+\subsection{Core Formula}
+Ito's lemma is a formula for calculating the differential of a function of a stochastic process. The formula is given by:
+
+\begin{equation}
+df(x,t) = \frac{\partial f}{\partial t} dt + \frac{\partial f}{\partial x} d x(t) + \frac{1}{2} \frac{\partial^2 f}{\partial x^2} d x(t)^2
+\end{equation}
+
+where $f(x,t)$ is the function of the stochastic process, and $dx(t)$ is a Wiener increment.
+
+This formula allows us to calculate the change in a function $f(x,t)$ as the stochastic process $x(t)$ evolves over time.
+
+\subsection{Log Normal Property}
+The log-normal property is a property of stock prices that arises from the stock process equation. If we assume that the drift term is zero, i.e. $\mu=0$, then the solution to the stock process equation is a log-normal distribution. Specifically, if we take the natural logarithm of both sides of the equation, we get:
+
+\begin{equation}
+\ln S(t) = \ln S(0) + \left( \mu - \frac{\sigma^2}{2} \right) t + \sigma W(t)
+\end{equation}
+
+which is a normal distribution with mean $\ln S(0) + \left( \mu - \frac{\sigma^2}{2} \right) t$ and variance $\sigma^2 t$. The stock price itself is then distributed according to a log-normal distribution with mean $S(0)e^{\mu t}$ and variance $S(0)^2 e^{2\mu t} (\exp(\sigma^2 t) -1)$.
+
+Using this property, we can write the future stock price at time $t$ as:
+
+\begin{equation}
+S(t) = S(0)e^{(\mu-\frac{\sigma^2}{2})t + \sigma W(t)}
+\end{equation}
+
+where $W(t)$ is a Wiener process.
+
+\subsection{DT Law}
+The DT (Doob-Meyer) theorem is a fundamental result in stochastic calculus that states that any continuous-time, square-integrable martingale can be expressed as the sum of a local martingale
+and a finite variation process. In other words, any such martingale $M(t)$ can be written as:
+
+\begin{equation}
+M(t) = M(0) + A(t) + V(t)
+\end{equation}
+
+where $A(t)$ is a continuous local martingale and $V(t)$ is a finite variation process. The DT theorem provides a way to decompose any continuous-time stochastic process into two components, one that is purely stochastic and one that is deterministic.
+
+
+\section{Black-Scholes Formula}
+
+The Black-Scholes formula is a mathematical model used to price European-style options, which are options that can only be exercised at a specific point in time, known as the expiration date. The formula was developed by Fischer Black and Myron Scholes in 1973 and is widely used in finance.
+
+The formula is given by the partial differential equation:
+
+\begin{equation}
+\frac{\partial f}{\partial t} + rS \frac{\partial f}{\partial S} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 f}{\partial S^2} = rf
+\end{equation}
+
+where $f(S,t)$ is the price of the option at time $t$ given the underlying asset price $S$, $r$ is the risk-free interest rate, and $\sigma$ is the volatility of the underlying asset. The equation is also subject to the boundary conditions $f(S,T) = max(S-K, 0)$ and $f(\infty,t) = 0$, where $T$ is the expiration date and $K$ is the strike price of the option.
+
+The solution to this equation is the Black-Scholes formula, which provides a way to calculate the price of a European-style option based on the underlying asset price, the strike price, the expiration date, the risk-free interest rate, and the volatility of the underlying asset.
+
+Working out the coefficient at $dt$ yields:
+
+\begin{equation}
+d\pi = \left(-\frac{\partial f}{\partial t} - \frac{1}{2} \frac{\partial^2 f}{\partial S^2} \sigma^2 S^2\right)dt
+\end{equation}
+
+Alternatively, we can calculate $d\pi$ in a different way. Since there is no $dz$ term in $d\pi$, the portfolio is riskless (at least momentarily) and must grow at the risk-free rate. Therefore, we have:
+
+\begin{equation}
+\pi(t + \Delta t) = \pi(t) e^{r\Delta t} \approx \pi(t)(1+r\Delta t)
+\end{equation}
+
+so that:
+
+\begin{equation}
+\pi(t + \Delta t) - \pi(t) \approx \pi(t)r\Delta t
+\end{equation}
+
+or:
+
+\begin{equation}
+d\pi = r\left(\frac{\partial f}{\partial S}S - f(S,t)\right)dt
+\end{equation}
+
+where $\pi = \Delta S - f(S,t) = \frac{\partial f}{\partial S}S - f(S,t)$. This equation provides another way to calculate the price of a European-style option based on the risk-free interest rate, the underlying asset price, and the derivative of the option price with respect to the asset price.
+
+
+\section{Risk-Neutral Valuation}
+
+Risk-neutral valuation is a technique used in finance to calculate the value of an asset by assuming that investors are indifferent to risk. In other words, the expected return on the asset is assumed to be the risk-free interest rate, and the price of the asset is calculated using the risk-neutral probability measure.
+
+The risk-neutral probability measure is a probability measure that makes all future expected values equal to their present values when discounted at the risk-free rate. The formula for risk-neutral valuation is given by:
+
+\begin{equation}
+V_0 = e^{-rT} \mathbb{E}^Q[V_T]
+\end{equation}
+
+where $V_0$ is the price of the asset at time 0, $r$ is the risk-free interest rate, $T$ is the time to expiration, $\mathbb{E}^Q$ is the expectation under the risk-neutral probability measure, and $V_T$ is the value of the asset at time $T$.
+
+\subsection{Boundary Conditions}
+
+Boundary conditions are constraints on the values of the asset at the expiration date that must be satisfied by the risk-neutral probability measure. The boundary conditions for European-style options are:
+
+\begin{itemize}
+\item For a call option: $V_T = (S_T - X)^+$, where $X$ is the strike price and $S_T$ is the price of the underlying asset at time $T$.
+\item For a put option: $V_T = (X - S_T)^+$.
+\end{itemize}
+
+To check the boundary conditions, we can use pseudo code:
+
+\begin{enumerate}
+\item Set $c = max(S_T - X, 0)$ for the call option, and $p = max(X - S_T, 0)$ for the put option.
+\item If $S_T > X$, then $ln(S_T/X) > 0$ and $d_1, d_2$ tend to $+\infty$. We have $N(d_1), N(d_2) \to 1$ and $N(-d_1), N(-d_2) \to 0$. Therefore, $c \to S_T - X$ and $p \to 0$.
+\item If $S_T < X$, then $ln(S_T/X) < 0$ and $d_1, d_2$ tend to $-\infty$. We have $N(d_1), N(d_2) \to 0$ and $N(-d_1), N(-d_2) \to 1$. Therefore, $c \to 0$ and $p \to X - S_T$.
+\end{enumerate}
+
+\section{Greek Letters}
+
+Greek letters are used in finance to represent certain variables and quantities. The most common Greek letters used in finance are:
+
+\begin{itemize}
+\item $\Delta$: Delta, which represents the sensitivity of the option price to changes in the underlying asset price.
+\item $\Gamma$: Gamma, which represents the sensitivity of the delta to changes in the underlying asset price.
+\item $\Theta$: Theta, which represents the sensitivity of the option price to changes in time.
+\item $\rho$: Rho, which represents the sensitivity of the option price to changes in the risk-free interest rate.
+\item $\sigma$: Sigma, which represents the volatility of the underlying asset.
+\end{itemize}
+
+These Greek letters are important for understanding the behavior of financial instruments and constructing hedging strategies
+\subsection{Problem and Simple Strategies}
+
+Let's consider a simple problem where a bank has sold a European call option on 100,000 shares of a non-dividend paying stock with the following parameters:
+
+\begin{itemize}
+\item $S_0 = 49$: the current price of the underlying asset
+\item $X = 50$: the strike price of the option
+\item $r = 5\%$: the risk-free interest rate
+\item $\sigma = 20\%$: the volatility of the underlying asset
+\item $T = 20$ weeks $= 0.38$ years: the time to expiration
+\end{itemize}
+Suppose that the Black-Scholes value of the option is \$240,000, which means that the bank has supposedly made a profit. How does the bank hedge its risk?
+
+There are two simple strategies that the bank can use:
+
+\begin{itemize}
+\item Naked position: take no action
+\item Covered position: buy 100,000 shares of the underlying asset today
+\end{itemize}
+
+These are static or "hedge and forget" schemes, meaning that the bank will not adjust its position as the underlying asset price changes over time.
+
+\subsection{Stop Loss Strategy}
+
+One potential problem with these static hedging strategies is the possibility of large losses if the underlying asset price moves against the bank. To mitigate this risk, the bank can use a stop loss strategy, where it sets a limit on the amount of loss it is willing to tolerate.
+
+For example, the bank could set a stop loss at $10\%$ below the current price of the underlying asset. If the price falls below this limit, the bank would sell its position to limit its losses.
+
+\subsection{The Paradox}
+
+One interesting paradox in finance is the idea that hedging can actually increase risk. This is because hedging can lead to a false sense of security, which can encourage investors to take on more risk than they otherwise would.
+
+For example, suppose that the bank in our previous example had used a covered position to hedge its risk. If the underlying asset price had increased, the bank would have made a profit on its position. However, this profit could encourage the bank to take on more risk in the future, which could lead to even greater losses if the underlying asset price falls.
+
+
+
+
+\subsection{Hedging with Greek Letters}
+
+Greek letters are used in finance to describe the sensitivity of an option price to various factors such as changes in the underlying asset price, time, volatility, and interest rates. By using these Greek letters, investors can construct hedging strategies to mitigate risk.
+
+One of the most common Greek letters used in hedging is delta ($\Delta$). Delta measures the sensitivity of an option price to changes in the underlying asset price. By adjusting the position in the underlying asset to maintain a constant delta, an investor can create a delta hedge that eliminates the risk from small changes in the underlying asset price.
+
+\subsubsection{Delta Hedging}
+
+Delta hedging involves adjusting the position in the underlying asset to maintain a constant delta. If an investor holds a long position in a call option with a delta of 0.5, for example, the investor could create a delta-neutral hedge by selling 50 shares of the underlying asset ($50 \times 0.5$) to eliminate the risk from small changes in the underlying asset price.
+
+Similarly, if an investor holds a long position in a put option with a delta of -0.5, the investor could create a delta-neutral hedge by buying 50 shares of the underlying asset.
+
+\subsubsection{Gamma Hedging}
+
+Gamma ($\Gamma$) measures the sensitivity of delta to changes in the underlying asset price. By adjusting the position in the underlying asset to maintain a constant gamma, an investor can create a gamma hedge that eliminates the risk from larger changes in the underlying asset price.
+
+\subsubsection{Vega Hedging}
+
+Vega ($\mathcal{V}$) measures the sensitivity of an option price to changes in volatility. By adjusting the position in the underlying asset to maintain a constant vega, an investor can create a vega hedge that eliminates the risk from changes in volatility.
+
+\subsubsection{Rho Hedging}
+
+Rho ($\rho$) measures the sensitivity of an option price to changes in the risk-free interest rate. By adjusting the position in the underlying asset to maintain a constant rho, an investor can create a rho hedge that eliminates the risk from changes in interest rates.
+
+\subsection{Types of Hedging}
+
+There are several types of hedging strategies that investors can use to mitigate risk:
+
+\subsubsection{Delta Hedging}
+
+Delta hedging involves adjusting the position in the underlying asset to maintain a constant delta. This is the most common type of hedging and is used to eliminate the risk from small changes in the underlying asset price.
+
+\subsubsection{Gamma Hedging}
+
+Gamma hedging involves adjusting the position in the underlying asset to maintain a constant gamma. This is used to eliminate the risk from larger changes in the underlying asset price.
+
+\subsubsection{Vega Hedging}
+
+Vega hedging involves adjusting the position in the underlying asset to maintain a constant vega. This is used to eliminate the risk from changes in volatility.
+
+\subsubsection{Rho Hedging}
+
+Rho hedging involves adjusting the position in the underlying asset to maintain a constant rho. This is used to eliminate the risk from changes in interest rates.
+
+By using these hedging strategies, investors can manage their risk and protect themselves from market volatility.
+
+
+
+\subsection{Historical Volatility}
+\begin{equation}
+\text{Historical Volatility} = \sqrt{\frac{\sum_{i=1}^{n}(r_i - \bar{r})^2}{n-1}}
+\end{equation}
+
+where $r_i$ is the return for period $i$, $\bar{r}$ is the average return over the period, and $n$ is the number of periods.
+
+\subsection{Implied Volatility}
+\begin{equation}
+C(S_t,K,T,r,\sigma_{imp}) = C_{market}
+\end{equation}
+
+where $C$ is the theoretical option price based on the Black-Scholes model, $S_t$ is the underlying asset price at time $t$, $K$ is the strike price of the option, $T$ is the time to expiration of the option, $r$ is the risk-free interest rate, and $\sigma_{imp}$ is the implied volatility.
+
+\subsection{Variance}
+\begin{equation}
+\text{Variance} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}
+\end{equation}
+
+where $x_i$ is the value of the data point at index $i$, $\bar{x}$ is the mean of the data, and $n$ is the number of data points.
+
+\subsection{Standard Deviation}
+\begin{equation}
+\text{Standard Deviation} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}}
+\end{equation}
+
+where $x_i$ is the value of the data point at index $i$, $\bar{x}$ is the mean of the data, and $n$ is the number of data points.
+
+
+\end{document}

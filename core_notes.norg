@@ -1,0 +1,31 @@
+* Put Option
+
+  A put option is a financial contract that gives the holder (buyer) the right, but not the obligation, 
+  to sell an underlying asset at a specified price (called the strike price) before the option's expiration date.
+  The creator (writer) of the put option is the one who is obligated to buy the asset if the holder exercises the option.
+
+  In your example, imagine you have a block of gold, and the current price is 100 pounds (St = 100).
+  You create a put option with a strike price of 100 pounds. If the value of gold falls to 80 pounds and someone bought your put option,
+  that person has the right (but not the obligation) to sell the gold to you at 100 pounds even though the current market price is 80 pounds.
+  In this case, the holder of the put option would likely exercise the option and sell the gold to you at the strike price (100 pounds)
+  since it is higher than the current market price (80 pounds). As the creator of the put option, you would be obligated to buy
+  the gold at the strike price of 100 pounds if the holder exercises the option.
+
+
+  1. The buyer of the option ; is the /seller/ of the block of gold 
+  2. The write of the option ; is the /customer/ of the block gold
+  3. The holder of the option i.e The seller of the block of gold /has the right but not the obligation to sell the block of gold./ 
+  4. The creator of the option i.e the /customer/ of the block of gold is /obligated to buy/ 
+
+
+
+  If the seller of the block of gold, decides to exercise their right to sell the block of gold at the strike price X, the customer /must/ buy the gold 
+  But if the seller, decides to say fuck this, then the customer gets jack shit.
+
+
+* Call 
+
+  1. The holder of the option has the right to buy, but not obligated
+  2. the creator /Person with gold./, is obligated to sell the block of gold 
+  3. Holder is /Customer of the block of gold/ 
+

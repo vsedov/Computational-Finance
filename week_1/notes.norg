@@ -1,0 +1,38 @@
+* Forward Contract and Spot Contracts
+   Something that you have made an agreement to buy or sell an asset at a certain future time for a certain price. It can be contrasted with a spot contract. 
+** Spot Contract
+   Which is an agreement to buy or sell an asset at the current time point. 
+
+** Core information
+   - A forward contract is traded in the over the counter market, between two financial institutions or between two clients.
+   - Long position : Agreeing to buy the underlying asset with a specified future data and price
+   - Short position : agrees to sell the asset on the same data for the same price. 
+   - Forward Contracts on foreign exchange are very popular. 
+** Payoffs from forward Contracts
+   - In general the pay off from a long position, in a forward contract on
+     a unit of a asset, is 
+   @math
+    S_t - K 
+   @end
+   Where K is the delivery price and S_t is the spot price of the asset at mautrity, these are referenced within the god notes. 
+   We have this because the holder of the contract is obligated to buy an asset worth S_t for K. Similarly the pay off from a short pos is the opposite of the above.
+   @math
+   K - S_t
+   @end
+   These payoffs can be positive or negative, they are limited . But cost nothing to enter into a forward contract like other contracts. Quick note is that these pay offs can be positive or negative. 
+  
+   Refer to notes, for the formulations
+
+** Future Contracts
+   Like a forward contract, a future contract is an agreement between two parties to buy and sell an asset, but there are heavier conditions that you would need to consider. 
+
+   Unlike a forward contract, future contractrs are normally traded on exchange. To make trading possible, the contracts do not know each other. More information in the god notes.
+
+** Options
+   - Options are traded both on exchange and over the counter market. 
+   - A call option gives the holder the right to buy the underlying asset by
+     a certain data for a certain price
+   - A put option gives the holder the right to sell the asset byu a certain
+     date for a certain price.  
+   - The price in the contract is known as the /strike price/
+
