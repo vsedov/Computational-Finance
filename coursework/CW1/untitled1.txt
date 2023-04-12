@@ -1,0 +1,41 @@
+# strike prices
+X1: 120
+X2: ??
+
+# Black-Schloles formula
+
+EuCallX1BS: ?? #European call with strike X1
+EuPutX1BS: ??  #European put with strike X1
+
+EuCallX2BS: ?? #European call with strike X2
+EuPutX2BS: ??  #European put with strike X2
+
+# Trees
+
+EuCallX1Trees: ?? #European call with strike X1
+EuPutX1Trees: ??  #European put with strike X1
+AmCallX1Trees: ?? #American call with strike X1
+AmPutX1Trees: ??  #American put with strike X1
+
+EuCallX2Trees: ?? #European call with strike X2
+EuPutX2Trees: ??  #European put with strike X2
+AmCallX2Trees: ?? #American call with strike X2
+AmPutX2Trees: ??  #American put with strike X2
+
+# Monte-Carlo
+
+EuCallX1MC: ?? #European call with strike X1
+EuPutX1MC: ??  #European put with strike X1
+
+EuCallX2MC: ?? #European call with strike X2
+EuPutX2MC: ??  #European put with strike X2
+
+# Asian (only for MSc students)
+
+AsCallX1MC: ?? #Asian call with strike X1
+AsPutX1MC: ??  #Asian put with strike X1
+
+AsCallX2MC: ?? #Asian call with strike X2
+AsPutX2MC: ??  #Asian put with strike X2
+
+COMMENTS # Any comments you would like to add should go below this line.
